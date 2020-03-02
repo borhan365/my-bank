@@ -18,22 +18,87 @@
             <button id="login" class="btn btn-primary"><b>Enter your Switch Bank</b></button>
         </div>
     </div>
-
-
-
-
+    
+    <!-- Secend Section || Transaction history -->
+    <section id="main_transaction">
+        <section class="transaction">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="deposit">
+                            <h4>Deposit</h4>
+                            <h2>$ <span id="currentDeposit">00</span></h2>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="withdraw">
+                            <h4>Withdraw</h4>
+                            <h2>$00</h2>    
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="balance">
+                            <h4>Balance</h4>
+                            <h2>$00</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section>
+            <!-- input Area -->
+            <div class="input_area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input_details_main">
+                                <h4>Deposit</h4>
+                                <input id="depositAmount" class="form-control" placeholder="$ You want to Deposit" type="text" name="" id="">
+                                <br><button id="addDeposit" class="btn btn-primary">Deposit</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input_details_main">
+                                <h4>Withdraw</h4>
+                                <input class="form-control" placeholder="$ You want to Withdraw" type="text" name="" id="">
+                                <br><button class="btn btn-primary">Withdraw</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
 
     <script>
         
-        const submitBtn = document.getElementById("login");
-        submitBtn.addEventListener("click", function(){
-            const hideMainContent = document.getElementById("myBank_Area");
-            hideMainContent.style.display = "none";
+        // Login Button handler
+        const loginBtn = document.getElementById("login");
+        loginBtn.addEventListener("click", function(){
+            const loginArea = document.getElementById("myBank_Area");
+            loginArea.style.display = "none";
+
+            const getLoginDiv = document.getElementById("main_transaction");
+            getLoginDiv.style.display = "block";
         })
 
+        // Deposit button event handler
+        const depositBtn = document.getElementById("addDeposit");
+        depositBtn.addEventListener("click", function(){
+            const depositAmounts = document.getElementById("depositAmount").value;
+            const depositNumber = parseFloat("depositAmount");
+
+            const currentDeposit = document.getElementById("currentDeposit").innerText;
+            const currectDepositNumber = parseFloat(currentDeposit);
+            const totalDeposit = depositNumber + currectDepositNumber;
+            
+
+            document.getElementById("currentDeposit").innerText = totalDeposit;
 
 
-
+            
+        })
     </script>
 
 
