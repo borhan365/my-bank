@@ -87,17 +87,15 @@
         const depositBtn = document.getElementById("addDeposit");
         depositBtn.addEventListener("click", function(){
             const depositAmounts = document.getElementById("depositAmount").value;
-            const depositNumber = parseFloat("depositAmount");
+            const depositNumber = parseFloat(depositAmounts);
 
             const currentDeposit = document.getElementById("currentDeposit").innerText;
             const currectDepositNumber = parseFloat(currentDeposit);
             const totalDeposit = depositNumber + currectDepositNumber;
-            
 
             document.getElementById("currentDeposit").innerText = totalDeposit;
+            document.getElementById("depositAmount").value = "";
 
-
-            
         })
     </script>
 
