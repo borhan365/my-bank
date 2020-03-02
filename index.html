@@ -39,7 +39,7 @@
                     <div class="col-md-4">
                         <div class="balance">
                             <h4>Balance</h4>
-                            <h2>$00</h2>
+                            <h2>$ <span id="currentBalance">1250</span></h2>
                         </div>
                     </div>
                 </div>
@@ -94,6 +94,13 @@
             const totalDeposit = depositNumber + currectDepositNumber;
 
             document.getElementById("currentDeposit").innerText = totalDeposit;
+
+
+            const currentBalance = document.getElementById("currentBalance").innerText;
+            const currentBalanceNumber = parseFloat(currentBalance);
+            const totalBalance = depositNumber + currentBalanceNumber;
+            document.getElementById("currentBalance").innerText = totalBalance;
+
             document.getElementById("depositAmount").value = "";
 
         })
