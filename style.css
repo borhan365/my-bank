@@ -54,3 +54,8 @@ body{
     border-radius: 7px;
     box-shadow: 1px 1px 12px 4px #d7d5d5;
 }
+::placeholder {
+    font-family: 'Cinzel';
+    font-style: italic;
+    text-transform: lowercase;
+  }

@@ -33,7 +33,7 @@
                     <div class="col-md-4">
                         <div class="withdraw">
                             <h4>Withdraw</h4>
-                            <h2>$00</h2>    
+                            <h2>$ <span id="currentWithdraw">00</span></h2>    
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -53,14 +53,14 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="input_details_main">
-                                <h4>Deposit</h4>
+                                <h4 class="text-success">Deposit</h4>
                                 <input id="depositAmount" class="form-control" placeholder="$ You want to Deposit" type="text" name="" id="">
                                 <br><button id="addDeposit" class="btn btn-primary">Deposit</button>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input_details_main">
-                                <h4>Withdraw</h4>
+                                <h4 class="text-danger">Withdraw</h4>
                                 <input id="withdrawAmount" class="form-control" placeholder="$ You want to Withdraw" type="text" name="" id="">
                                 <br><button id="addWithdraw" class="btn btn-primary">Withdraw</button>
                             </div>
@@ -99,6 +99,11 @@
         const withdrawBtn = document.getElementById("addWithdraw");
         withdrawBtn.addEventListener("click", function(){
             const withdrawNumber = getInputNumber("withdrawAmount");
+
+            UpdateSpanText("currentWithdraw", withdrawNumber);
+            UpdateSpanText("currentBalance", -1 * withdrawNumber);
+
+            document.getElementById("withdrawAmount").value = "";
         })
 
         // Get Input Numbers
